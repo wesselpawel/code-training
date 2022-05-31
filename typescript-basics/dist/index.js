@@ -38,8 +38,8 @@ const user = {
 };
 //type assertion
 let cid = 1;
-//let customerId = <number>cid
 let customerId = cid;
+//let customerId = cid as number
 //functions
 function addNum(x, y) {
     return x + y;
@@ -59,8 +59,36 @@ const add = (x, y) => x + y;
 const sub = (x, y) => x - y;
 //classes 
 class Person {
-    constructor() {
-        console.log(123);
+    constructor(id, userName) {
+        this.id = id;
+        this.userName = userName;
+    }
+    register() {
+        return `${this.userName} is now registered`;
     }
 }
-const brad = new Person();
+const brad = new Person(1, "Brad");
+const pawel = new Person(2, "Pawel");
+console.log(brad.id, pawel.id);
+console.log(brad, pawel);
+console.log(brad.register());
+//subclasses
+class Employee extends Person {
+    constructor(id, userName, position) {
+        super(id, userName);
+        this.position = position;
+    }
+}
+const emp = new Employee(3, "Pablo", 'Developer');
+console.log(emp.register());
+//generics
+function getArray(items) {
+    return new Array().concat(items);
+}
+let numArray = getArray([1, 2, 3, 4]);
+let strArray = getArray(['Brad', 'Pawel', 'John']);
+strArray.push('abc');
+strArray.push('def');
+numArray.push(2);
+console.log(strArray);
+console.log(numArray);

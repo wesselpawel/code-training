@@ -56,8 +56,8 @@ const user: User = {
 
 //type assertion
 let cid: any = 1
-//let customerId = <number>cid
-let customerId = cid as number
+let customerId = <number>cid
+//let customerId = cid as number
 
 //functions
 function addNum(x: number, y: number): number {
@@ -92,14 +92,59 @@ interface MathFunc {
 const add: MathFunc = (x: number, y: number): number => x+y
 const sub: MathFunc = (x: number, y: number): number => x-y
 
-//classes 
-class Person {
-    id: number,
-    name: string
+interface PersonInterface{
+    id: number, //can be a 'readonly'
+    userName: string,
+    register(): string
+}
 
-    constructor(){
-        console.log(123)
+//classes 
+class Person implements PersonInterface{
+    id: number
+    userName: string
+
+    constructor(id: number, userName: string){
+        this.id = id
+        this.userName = userName
+    }
+
+    register(){
+        return `${this.userName} is now registered`
     }
 }
 
-const brad = new Person()
+const brad = new Person(1, "Brad")
+const pawel = new Person(2, "Pawel")
+
+console.log(brad.id, pawel.id)
+console.log(brad, pawel)
+console.log(brad.register())
+
+//subclasses
+class Employee extends Person {
+    position: string
+
+    constructor(id: number, userName: string, position: string){
+        super(id, userName)
+        this.position = position
+    }
+}
+
+const emp = new Employee(3, "Pablo", 'Developer')
+
+console.log(emp.register())
+
+//generics
+function getArray<T>(items: T[]): T[] {
+    return new Array().concat(items)
+}
+
+let numArray = getArray<number>([1,2,3,4])
+let strArray = getArray<string>(['Brad', 'Pawel', 'John'])
+
+strArray.push('abc')
+strArray.push('def')
+numArray.push(2)
+
+console.log(strArray)
+console.log(numArray)
