@@ -1,0 +1,32 @@
+.app{
+  margin: 20vh auto;
+  width:300px;
+  height:300px;
+  border:2px solid black;
+}
+form{
+  display:flex;
+  justify-content: center;
+  align-items: center;
+}
+h1{
+  text-align: center;
+}
+.inputs{
+  display:flex;
+  flex-direction: column;
+}
+.dot-btn{
+  background-color: black;
+  width:15px;
+  height:15px;
+  border-radius: 50%;
+}
+.dots-containter{
+  width:40px;
+  height:25px;
+  display:flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 60px auto;
+}
