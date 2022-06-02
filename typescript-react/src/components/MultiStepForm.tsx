@@ -1,4 +1,5 @@
 import {useState} from 'react'
+import PassChecker from './PassChecker'
 
 export interface FormProps {
     currentStep: number
@@ -19,7 +20,7 @@ const initialState: State = {
 } 
 
 const MultiStepForm = (props: FormProps) => {
-    const [state, setState] = useState(initialState)
+const [state, setState] = useState(initialState)
 
     const handleChange = <T extends keyof State>(prop: T, value: State[T]) => {
         setState({...state, [prop]: value})
@@ -40,6 +41,7 @@ const MultiStepForm = (props: FormProps) => {
                             <input type="text" id="userName" value={state.userName} onChange={(e) => handleChange("userName", e.target.value)}/>
                             <label htmlFor="password">Password:</label>
                             <input type="password" id="password" value={state.password} onChange={(e) => handleChange("password", e.target.value)}/>
+                            <PassChecker password={state.password}/>
                         </div>
                     )
                 }

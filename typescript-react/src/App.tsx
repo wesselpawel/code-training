@@ -1,6 +1,6 @@
 import React, {useState} from 'react';
 import Header from './components/Header';
-import MultiStepForm from './components/MultiStepForm/MultiStepForm';
+import MultiStepForm from './components/MultiStepForm';
 import './App.css';
 
 function App() {
