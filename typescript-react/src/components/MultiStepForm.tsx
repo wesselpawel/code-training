@@ -16,11 +16,12 @@ const initialState: State = {
     firstName: "",
     lastName: "",
     userName: "",
-    password: ""
-} 
+    password: "",
+}
+
 
 const MultiStepForm = (props: FormProps) => {
-const [state, setState] = useState(initialState)
+    const [state, setState] = useState(initialState)
 
     const handleChange = <T extends keyof State>(prop: T, value: State[T]) => {
         setState({...state, [prop]: value})

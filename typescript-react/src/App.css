@@ -68,3 +68,15 @@ h1{
   flex-direction: column;
   height:70px;
 }
+.hover-box{
+  width:auto;
+  height:25px;
+  background-color: white;
+  border:1px solid black;
+  margin-left: -15px;
+  visibility: hidden;
+}
+
+.hover-box:hover{
+  visibility: visible;
+}
