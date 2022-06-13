@@ -9,7 +9,7 @@ export interface Props {
 
 
 const SelectInput = (props: Props) => {
-    const [selectedItem, selectedItemSet] = useState<{ coffee: string, id: number }>(props.listItems[1])
+    const [selectedItem, selectedItemSet] = useState<{ coffee: string, id: number }>(props.listItems[0])
     const [menuOpened, menuOpenedSet] = useState<boolean>(false)
     const newSelectedItem = (coffee: string, id: number ) => {
         selectedItemSet({coffee, id} )
@@ -20,8 +20,8 @@ const SelectInput = (props: Props) => {
         <h1>Coffee type selected: {selectedItem.coffee} <br /> with id: {selectedItem.id}</h1>
             <div className="select-box">
                 <div 
-                className="selected-item"
-                onClick={() => menuOpenedSet(!menuOpened)}
+                    className="selected-item"
+                    onClick={() => menuOpenedSet(!menuOpened)}
                 >
                     {selectedItem.coffee} 
                     <div className='arrow'> &gt; 
@@ -35,6 +35,8 @@ const SelectInput = (props: Props) => {
                                 onClick={() => newSelectedItem(item.coffee, item.id)}
                             >
                                 {item.coffee}
+                                {selectedItem.id === item.id ? (<div className="checked-item"></div>) : (undefined)}
+                                
                             </div>
                         )}
                     </div>
