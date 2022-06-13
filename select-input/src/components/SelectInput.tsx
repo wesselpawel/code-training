@@ -1,30 +1,28 @@
 import { useState } from 'react';
 
 export interface Props {
-    listItems: { coffee: string, id: number}[]
+    listItems: { itemName: string, id: number}[]
     color: string
     bgColor: string
 }
 
-
-
 const SelectInput = (props: Props) => {
-    const [selectedItem, selectedItemSet] = useState<{ coffee: string, id: number }>(props.listItems[0])
+    const [selectedItem, selectedItemSet] = useState<{ itemName: string, id: number }>(props.listItems[0])
     const [menuOpened, menuOpenedSet] = useState<boolean>(false)
-    const newSelectedItem = (coffee: string, id: number ) => {
-        selectedItemSet({coffee, id} )
+    const newSelectedItem = (itemName: string, id: number ) => {
+        selectedItemSet({itemName, id} )
         menuOpenedSet(false)
     }
     return (
         <div className='wrapper'>
-        <h1>Coffee type selected: {selectedItem.coffee} <br /> with id: {selectedItem.id}</h1>
+        <h1>Coffee type selected: {selectedItem.itemName} <br /> with id: {selectedItem.id}</h1>
             <div className="select-box">
-                <div 
+                <div
                     className="selected-item"
                     onClick={() => menuOpenedSet(!menuOpened)}
                 >
-                    {selectedItem.coffee} 
-                    <div className='arrow'> &gt; 
+                    {selectedItem.itemName}
+                    <div className='arrow'> &gt;
                     </div>
                 </div>
                     <div className={menuOpened === true ? 'menu opened' : 'menu closed'}>
@@ -32,9 +30,9 @@ const SelectInput = (props: Props) => {
                             <div
                                 className='item'
                                 key={index}
-                                onClick={() => newSelectedItem(item.coffee, item.id)}
+                                onClick={() => newSelectedItem(item.itemName, item.id)}
                             >
-                                {item.coffee}
+                                {item.itemName}
                                 {selectedItem.id === item.id ? (<div className="checked-item"></div>) : (undefined)}
                                 
                             </div>
