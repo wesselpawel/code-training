@@ -1,6 +1,5 @@
-import React, { useState } from 'react';
-import SelectInput from './components/SelectInput/SelectInput';
-
+import FloatingInput from "./components/FloatingInput/FloatingInput";
+import './index.css'
 const listItems = [
   {name: "Americano", id: 0},
   {name: "Espresso", id: 1},
@@ -18,8 +17,10 @@ const listItems = [
 
 function App() {
   return (
-    <div className="container">
-      <SelectInput listItems={listItems} color="white" bgColor='black'/>
+    <div className="wrapper">
+        <FloatingInput type="text" label="Title" name="title" />
+        <FloatingInput type="password" label="Password" name="password" />
+        <FloatingInput type="text" label="Title" name="title" />
     </div>
   );
 }

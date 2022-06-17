@@ -30,7 +30,7 @@ const SelectInput = ({listItems = [], color, bgColor}: SelectInputProps): JSX.El
                     onClick={toggleMenuOpen}
                 >
                     {selectedItem.name}
-                    <div className='select__arrow'> &gt;</div>
+                    <div className='select__arrow'>&gt;</div>
                 </div>
                 
                 {/*Ternary operator coerces types to booleans, so `menuOpen` is equivalent to `menuOpened === true`*/}

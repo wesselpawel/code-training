@@ -1,0 +1,27 @@
+.wrapper {
+  width: 80vw;
+  height: 100vh;
+  margin: 0 auto;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.wrapper .creator {
+  color: white;
+  background-color: black;
+  height: 80%;
+  width: 80%;
+}
+
+.wrapper .creator__title {
+  padding: 0 25px 25px 25px;
+  border-bottom: 2px solid blueviolet;
+}
+/*# sourceMappingURL=style.css.map */

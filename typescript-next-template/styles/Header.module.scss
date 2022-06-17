@@ -1,0 +1,15 @@
+.header{
+    height:11vh;
+    background-color: black;
+    width:100%;
+    color:white;
+    position: relative;
+    display:flex;
+    justify-content: space-around;
+    align-items: center;
+    .logo{
+        display:flex;
+        justify-content: space-between;
+        width:200px;
+    }
+}

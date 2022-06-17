@@ -1,0 +1,35 @@
+.floating {
+  position: relative;
+  margin-top: 20px;
+  margin-left: 20px;
+}
+
+.floating__label {
+  position: absolute;
+  left: 4px;
+  top: 2px;
+  z-index: 2;
+  -webkit-transition: .15s;
+  transition: .15s;
+}
+
+.floating__label--active {
+  position: absolute;
+  top: -25px;
+  left: 0;
+  z-index: 2;
+  background-color: rgba(255, 255, 255, 0.516);
+  border-radius: 25px;
+  padding: 0 10px;
+  -webkit-transition: .15s;
+  transition: .15s;
+}
+
+.floating__input {
+  position: absolute;
+  left: 0;
+  top: 0;
+  border: none;
+  height: 30px;
+}
+/*# sourceMappingURL=style.css.map */
