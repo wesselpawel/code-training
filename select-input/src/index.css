@@ -20,7 +20,7 @@ code {
 .wrapper{
   display:flex;
   flex-direction: column;
-  height:30vh;
+  height:50vh;
   width:100vw;
   justify-content: space-evenly;
 }
