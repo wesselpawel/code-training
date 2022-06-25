@@ -1,14 +1,11 @@
 import './styles/style.css';
 
-export default function FloatingInput(props:any){
-    const {name = 'dasdfksf', name1='sdfsdf'} = props
+export default function FloatingInput(props: React.InputHTMLAttributes<HTMLInputElement>){
 
     return(
 
         <div className="floating">
-            {name}
-            {name1}
-            {/* {props.children} */}
+            {props.children}
         </div>
     )
 }

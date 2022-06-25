@@ -1,11 +1,10 @@
 .floating{
     position:relative;
-    margin-top:20px;
-    margin-left: 20px;
+    margin-top:50px;
     label{
         position:absolute;
         left: 4px;
-        top:2px;
+        top:7px;
         z-index: 2;
         transition: .15s;
         &:focus-within{
@@ -20,11 +19,12 @@
         }
     }
     input{
-        position: absolute;
+        position: relative;
         left:0;
         top:0;
         border:none;
-        height:30px;
+        height:40px;
+        width:225px;
         &:focus{
             box-shadow:none;
             outline: none;

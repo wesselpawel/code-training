@@ -1,13 +1,12 @@
 .floating {
   position: relative;
-  margin-top: 20px;
-  margin-left: 20px;
+  margin-top: 50px;
 }
 
 .floating label {
   position: absolute;
   left: 4px;
-  top: 2px;
+  top: 7px;
   z-index: 2;
   -webkit-transition: .15s;
   transition: .15s;
@@ -26,11 +25,12 @@
 }
 
 .floating input {
-  position: absolute;
+  position: relative;
   left: 0;
   top: 0;
   border: none;
-  height: 30px;
+  height: 40px;
+  width: 225px;
 }
 
 .floating input:focus {
